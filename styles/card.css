@@ -1,0 +1,94 @@
+.jogo .card {
+  padding: 30px;
+  margin: 15px;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 17vw;
+  height: 160px;
+  border-radius: 0px 30px 0px 30px;
+  user-select: none;
+}
+
+.jogo {
+  align-items: center;
+  padding: 10px;
+  /* margin: 10px; */
+  /* top: 24px; */
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  justify-content: center;
+  background-image: url('../img/bg.jpg');
+}
+
+.jogo .card img {
+  width: 100px;
+  height: 100px;
+  border-radius: 30px 30px 30px 30px;
+}
+
+.jogo .card,
+.jogo .virado {
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+}
+
+.jogo .card {
+  background-image: url('../img/baralho.png');
+ 
+}
+
+.card:active {
+  transform: scale(0.97);
+  transition: transform 0.2s;
+}
+
+.card.flip {
+  transform: rotateY(180deg);
+}
+
+.card.flip[data-nome="franca"],
+.card.flip[data-nome="franca"] img {
+  background-color: #84cffa;
+}
+
+.card.flip[data-nome="alemanha"],
+.card.flip[data-nome="alemanha"] img {
+  background-color: #FA8484;
+}
+
+.card.flip[data-nome="espanha"],
+.card.flip[data-nome="espanha"] img {
+  background-color: #E984FA;
+}
+
+.card.flip[data-nome="uk"],
+.card.flip[data-nome="uk"] img {
+  background-color: #84FAAC;
+}
+
+.card.flip[data-nome="us"],
+.card.flip[data-nome="us"] img {
+  background-color: #8684FA;
+}
+
+.card.flip[data-nome="brasil"],
+.card.flip[data-nome="brasil"] img {
+  background-color: #F7FA84;
+}
+/* novas */
+
+.frente,
+.verso {
+  width: 100px;
+  height: 100px;
+  padding: 15px;
+  position: absolute;
+  backface-visibility: hidden;
+}
+
+.frente {
+  transform: rotateY(180deg);
+}
